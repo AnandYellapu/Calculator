@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Calculator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<style>
+    /* CSS Reset & Global Styles */
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Open Sans';
+    -webkit-appearance: none;
+}
+
+.wrapper {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(12, 12, 12);
+    transition: 0.8s all;
+}
+
+h1 {
+    margin-bottom: 1.5%;
+    color: #fff;
+    font-weight: normal;
+}
+
+.container {
+    width: 350px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+}
+
+.top-buttons {
+    display: flex;
+    align-items: center;
+}
+
+input {
+    padding: 25px;
+    color: rgb(87, 87, 87);
+    font-size: 1em;
+    cursor: pointer;
+    width: 70px;
+    background-color: #fff;
+    border: none;
+    outline: none;
+    border-radius: 100px;
+    margin: 0.2em;
+}
+
+.first-row,
+.second-row,
+.third-row,
+.fourth-row,
+.fifth-row {
+    margin-bottom: 4px;
+}
+
+input[type="button"] {
+    color: rgb(122, 122, 122);
+}
+
+input[type="text"] {
+    background-color: rgb(255, 255, 255);
+    width: 222.5px;
+}
+
+input[type="button"]:hover {
+    background-color: rgb(37, 35, 59);
+    color: #fff;
+}
+
+#clear-button {
+    color: #fff;
+    background-color: rgb(247, 6, 6);
+}
+
+</style>
+
+<body>
+    <div class="wrapper">
+        <div class="container">
+            <div class="header-container">
+                <h1 id="toast">Calculator</h1>
+                <div class="top-buttons">
+                </div>
+            </div>
+            <div class="first-row">
+                <input type="text" name="result" id="result" placeholder="Result" readonly />
+                <input type="button" value="C" onclick="result.value=''" id="clear-button" />
+            </div>
+            <div class="second-row">
+                <input type="button" value="1" onclick="liveScreen(1)" />
+                <input type="button" value="2" onclick="liveScreen(2)" />
+                <input type="button" value="3" onclick="liveScreen(3)" />
+                <input type="button" value="+" onclick="liveScreen('+')" />
+            </div>
+            <div class="third-row">
+                <input type="button" value="4" onclick=" liveScreen(4)" />
+                <input type="button" value="5" onclick=" liveScreen(5)" />
+                <input type="button" value="6" onclick=" liveScreen(6)" />
+                <input type="button" value="-" onclick="liveScreen('-')" />
+            </div>
+            <div class="fourth-row">
+                <input type="button" value="7" onclick="liveScreen(7)" />
+                <input type="button" value="8" onclick="liveScreen(8)" />
+                <input type="button" value="9" onclick=" liveScreen(9)" />
+                <input type="button" value="x" onclick="liveScreen('*')" />
+            </div>
+            <div class="fifth-row">
+                <input type="button" value="/" onclick="liveScreen('/')" />
+                <input type="button" value="0" onclick="liveScreen(0)" />
+                <input type="button" value="." onclick="liveScreen('.')" />
+                <input type="button" value="=" onclick="calculate(result.value)" />
+            </div>
+        </div>
+    </div>
+    <script src="./script.js"></script>
+    
+</body>
+
+</html>
